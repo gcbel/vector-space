@@ -1,0 +1,12 @@
+{
+  "name": "cu-tech-blog",
+  "version": "1.0.0",
+  "description": "Social media created for sharing tech concepts. Built with Handlebars.js and Sequelize/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
