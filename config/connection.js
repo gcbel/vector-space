@@ -1,6 +1,8 @@
+/* DEPENDENCIES */
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
+/* SEQUELIZE */
 const sequelize = process.env.DB_URL
   ? new Sequelize(process.env.DB_URL)
   : new Sequelize(
@@ -13,4 +15,5 @@ const sequelize = process.env.DB_URL
       }
     );
 
+/* EXPORTS */
 module.exports = sequelize;
