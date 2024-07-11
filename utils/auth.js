@@ -1,5 +1,5 @@
 /* FUNCTIONS */
-const auth = (req, res, next) => {
+const authenticate = (req, res, next) => {
     if (!req.session.loggedIn) {
         res.redirect('/login');  // ??
     } else {
@@ -8,4 +8,4 @@ const auth = (req, res, next) => {
 }
 
 /* EXPORTS */
-module.exports = auth;
+module.exports = authenticate;
