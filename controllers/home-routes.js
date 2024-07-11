@@ -1,11 +1,11 @@
 /* DEPENDECIES */
 const router = require('express').Router();
-const authorized = require('../utils/auth.js')         // Import authentication middleware
+const { authenticate } = require('../utils/helpers.js')         // Import authentication middleware
 const { Post, User } = require('../models/index.js');  // Import models
 
 /* ROUTES */
 /* Get request for homepage, gets all posts */
-router.get('/', authorized, async (req, res) => {
+router.get('/', authenticate, async (req, res) => {
     try {
         // Get all posts
         const posts = await Post.findAll({

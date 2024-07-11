@@ -1,6 +1,7 @@
 /* DEPENDENCIES */
 const User = require('./User.js');
 const Post = require('./Post.js');
+const Comment = require('./Comment.js')
 
 /* ASSOCIATIONS */
 User.hasMany(Post, {
@@ -11,5 +12,9 @@ Post.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
+Post.hasMany(Comment, {
+  foreignKey: 'post_id',
+})
+
 /* EXPORTS */
-module.exports = { User, Post };
+module.exports = { User, Post, Comment };
