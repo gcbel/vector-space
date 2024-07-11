@@ -1,7 +1,7 @@
 /* DEPENDECIES */
 const router = require('express').Router();
-const authorized = require('../utils/auth.js')  // Import authentication middleware
-const { Post, User } = require('../models');    // Import models
+const authorized = require('../utils/auth.js')         // Import authentication middleware
+const { Post, User } = require('../models/index.js');  // Import models
 
 /* ROUTES */
 /* Get request for homepage, gets all posts */
