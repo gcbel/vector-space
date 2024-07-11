@@ -14,6 +14,8 @@ This application can be run from the Render.com platform. Allow about a minute f
 
 ## Credits
 
+CSS Reset file: https://meyerweb.com/eric/tools/css/reset/
+
 ## License
 
 [MIT License](https://opensource.org/license/mit)
