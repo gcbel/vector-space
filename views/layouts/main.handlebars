@@ -12,6 +12,12 @@
     />
 
     {{! FONTS }}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
     {{! BOOTSTRAP }}
     <link
@@ -22,7 +28,6 @@
     />
 
     {{! STYLES }}
-    <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
@@ -32,7 +37,8 @@
         <a href="/">VectorSpace</a>
         <div>
           <a href="/">Home</a>
-          <a href="./assets/html/dashboard.html">Dashboard</a>
+          <a href="/feed">Feed</a>
+          <a href="/dashboard">Dashboard</a>
           {{#if signedIn}}
             <a
               href="/logout"
@@ -50,7 +56,6 @@
           {{/if}}
         </div>
       </nav>
-      <h1>Where ideas connect.</h1>
     </header>
 
     <main>
