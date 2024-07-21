@@ -1,7 +1,7 @@
 /* GENERAL */
 :root {
-  --background: #03223e;
-  --background-clear: #03223eca;
+  --background: #021627;
+  --background-clear: #021627ca;
   --text-color: #ffffff;
   --clear: #ffffff00;
   --hover: #8faecb;
@@ -63,7 +63,6 @@ footer a {
   height: 70%;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
 }
 
@@ -81,9 +80,9 @@ footer a {
 }
 
 /* LOGIN PAGE */
-#sign-in-button,
-#sign-up-button {
-  margin: 0px 15px 0px 15px; /* space out sign up and sign in buttons */
+#sign-in-menu,
+#sign-up-menu {
+  margin: 0px 20px 0px 20px; /* space out sign up and sign in buttons */
 }
 
 #signup-signin-box {
@@ -120,8 +119,8 @@ footer a {
   width: 98%;
 }
 
-#go-sign-up,
-#go-sign-in {
+#sign-up-button,
+#sign-in-button {
   margin-top: 10px;
   border: 1px solid var(--dark-text);
   padding: 6px 15px 6px 15px;

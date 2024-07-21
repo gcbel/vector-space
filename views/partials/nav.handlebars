@@ -11,12 +11,13 @@
     </div>
     <div id="regular-nav">
       <a href="/feed">Feed</a>
-      <a href="/dashboard">Dashboard</a>
       {{#if signedIn}}
+        <a href="/dashboard">Dashboard</a>
         <a href="/logout" class="borders" id="logout">Logout</a>
         {{! JAVASCRIPT }}
         <script src="/js/logout.js"></script>
       {{else}}
+        <a href="/login">Dashboard</a>
         <a href="/login" class="borders" id="login">Login</a>
       {{/if}}
     </div>
@@ -27,10 +28,11 @@
 <div class="hidden fade-in-quick hanken" id="hamburger-nav">
   <div id="hamburger-nav-inner">
     <a href="/feed">Feed</a>
-    <a href="/dashboard">Dashboard</a>
     {{#if signedIn}}
+      <a href="/dashboard">Dashboard</a>
       <a href="/logout" class="borders" id="logout">Logout</a>
     {{else}}
+      <a href="/login">Dashboard</a>
       <a href="/login" class="borders" id="login">Login</a>
     {{/if}}
   </div>

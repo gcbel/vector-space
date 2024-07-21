@@ -25,7 +25,7 @@ Comment.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "post",
+        model: "user",
         key: "id",
       },
     },
@@ -34,7 +34,7 @@ Comment.init(
     sequelize,
     timestamps: true,
     freezeTableName: true,
-    modelName: "post",
+    modelName: "comment",
   }
 );
 

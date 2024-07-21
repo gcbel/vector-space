@@ -16,16 +16,19 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/posts", async (req, res) => {
+router.get("/feed", async (req, res) => {
   try {
     // Get posts
-    postData = await Post.findAll({
-      include: [{ model: User, model: Comment }],
+    const postData = await Post.findAll({
+      include: [
+        { model: User },
+        { model: Comment, include: [{ model: User }] },
+      ],
     });
     const posts = postData.map((posts) => posts.get({ plain: true }));
 
     // Render page
-    res.render("posts", {
+    res.render("feed", {
       loggedIn: req.session.loggedIn,
       posts,
     });
@@ -64,6 +67,19 @@ router.get("/login", async (req, res) => {
     res.render("login", {
       loggedIn: req.session.loggedIn,
       darkText: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+/* Get request, if not found above, route to 404 page */
+router.get("*", async (req, res) => {
+  try {
+    // Render
+    res.render("404", {
+      loggedIn: req.session.loggedIn,
+      darkText: false,
     });
   } catch (err) {
     res.status(500).json(err);
