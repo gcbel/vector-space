@@ -1,6 +1,7 @@
 /* GENERAL */
 :root {
   --background: #03223e;
+  --background-clear: #03223eca;
   --text-color: #ffffff;
   --hover: #8faecb;
 }
@@ -68,4 +69,62 @@ footer a {
   position: relative;
   top: -20px;
   margin: 0px;
+}
+
+/* LOGIN PAGE */
+#sign-in-button,
+#sign-up-button {
+  margin: 0px 15px 0px 15px; /* space out sign up and sign in buttons */
+}
+
+#signup-signin-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 30px 10% 0px 10%;
+  font-size: 22px;
+  min-width: 150px;
+  width: 80%;
+}
+
+#sign-up {
+  display: none;
+}
+
+#sign-up,
+#sign-in,
+#google-auth {
+  padding: 20px;
+  max-width: 310px;
+}
+
+#google-auth {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+#signup-signin-box input {
+  padding: 4px;
+  width: 98%;
+}
+
+#go-sign-up,
+#go-sign-in {
+  margin-top: 10px;
+  border: 1px solid var(--dark-text);
+  padding: 6px 15px 6px 15px;
+  border-radius: 25px;
+}
+
+.signin-alert {
+  font-size: 16px;
+  color: var(--dark-hover);
+}
+
+.signin-alert-important {
+  font-size: 16px;
+  color: red;
 }

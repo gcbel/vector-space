@@ -53,5 +53,22 @@ router.get("/dashboard/username", async (req, res) => {
   }
 });
 
+/* Get request for login page */
+router.get("/login", async (req, res) => {
+  try {
+    if (req.session.loggedIn) {
+      res.redirect("/locations");
+      return;
+    }
+    // Render
+    res.render("login", {
+      loggedIn: req.session.loggedIn,
+      darkText: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 /* EXPORTS */
 module.exports = router;

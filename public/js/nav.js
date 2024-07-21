@@ -6,7 +6,7 @@ const regularNav = document.querySelector("#regular-nav");
 /* FUNCTIONS */
 /* Handle toggling of hamburger navugation links */
 function toggleNav() {
-  navDisplay.classList.toggle("hidden");
+  hamburgerNav.classList.toggle("hidden");
 }
 
 /* Handle showing/hiding of nav */
@@ -22,6 +22,7 @@ function handleResize() {
 
 /* EVENT LISTENERS */
 window.addEventListener("resize", handleResize);
+hamburgerMenu.addEventListener("change", toggleNav);
 
 /* INITIALIZERS */
 window.onload = handleResize;

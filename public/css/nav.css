@@ -1,10 +1,10 @@
-/* HEADER */
+/* REGULAR NAV */
 nav {
   position: sticky;
   top: 0;
   display: flex;
   justify-content: space-between;
-  padding: 20px 18px 6px 24px;
+  padding: 40px 16px 6px 24px;
   align-items: center;
   height: 60px;
   z-index: 1;
@@ -29,6 +29,8 @@ nav a {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  margin: 0px 8px 0px 0px;
+  z-index: 1;
 }
 
 .hamburger-menu::before,
@@ -67,4 +69,29 @@ nav a {
 .hamburger-menu input:checked {
   opacity: 0;
   width: 0;
+}
+
+/* HAMBURGER NAV CONTENT */
+#hamburger-nav {
+  color: var(--light-text);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--background-clear);
+  z-index: 0.75;
+}
+
+#hamburger-nav-inner {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 30px;
+}
+
+#hamburger-nav-inner a {
+  padding: 20px;
 }
