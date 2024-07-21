@@ -10,7 +10,8 @@ const signinEmailAlert = document.querySelector("#signin-email-alert");
 const signinPasswordAlert = document.querySelector("#signin-password-alert");
 const signinAlert = document.querySelector("#signin-alert");
 
-const emailAlert = document.querySelector("#signup-email-alert");
+const emailAlert1 = document.querySelector("#signup-email-alert-1");
+const emailAlert2 = document.querySelector("#signup-email-alert-2");
 const firstAlert = document.querySelector("#signup-first-alert");
 const lastAlert = document.querySelector("#signup-last-alert");
 const userAlert1 = document.querySelector("#signup-user-alert-1");
@@ -76,15 +77,23 @@ const userSignUp = async (event) => {
   const password = document.querySelector("#sign-up-password").value;
 
   const validEmail = isValidEmail(email);
+  const existingEmail = await isExistingEmail(email);
   const existingUser = await isExistingUsername(user);
+  console.log(
+    `Existing email: ${existingEmail}, Existing email: ${existingUser}`
+  );
 
   let createAccount = true;
 
   if (!email || !validEmail) {
-    emailAlert.classList.remove("hidden");
+    emailAlert1.classList.remove("hidden");
+    createAccount = false;
+  } else if (existingEmail) {
+    emailAlert2.classList.remove("hidden");
     createAccount = false;
   } else {
-    emailAlert.classList.add("hidden");
+    emailAlert1.classList.add("hidden");
+    emailAlert2.classList.add("hidden");
   }
 
   if (!first) {
@@ -154,7 +163,22 @@ function isValidEmail(email) {
 /* Checks if username exists in database */
 async function isExistingUsername(username) {
   try {
-    const response = await fetch(`/api/check-user/${username}`);
+    const response = await fetch(`/api/users/check-user/${username}`);
+    if (response.ok) {
+      const { exists } = await response.json();
+      return exists;
+    } else {
+      return false;
+    }
+  } catch (err) {
+    return false;
+  }
+}
+
+/* Checks if email exists in database */
+async function isExistingEmail(email) {
+  try {
+    const response = await fetch(`/api/users/check-email/${email}`);
     if (response.ok) {
       const { exists } = await response.json();
       return exists;

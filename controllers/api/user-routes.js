@@ -81,5 +81,19 @@ router.get("/check-user/:username", async (req, res) => {
   }
 });
 
+router.get("/check-email/:email", async (req, res) => {
+  try {
+    const email = await User.findOne({
+      where: { email: req.params.email },
+    });
+    if (!email) {
+      return res.status(200).json({ exists: false });
+    }
+    res.status(200).json({ exists: true });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 /* EXPORTS */
 module.exports = router;

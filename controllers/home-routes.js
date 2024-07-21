@@ -65,8 +65,7 @@ router.get("/login", async (req, res) => {
     }
     // Render
     res.render("login", {
-      loggedIn: req.session.loggedIn,
-      darkText: true,
+      loggedIn: true,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -79,7 +78,6 @@ router.get("*", async (req, res) => {
     // Render
     res.render("404", {
       loggedIn: req.session.loggedIn,
-      darkText: false,
     });
   } catch (err) {
     res.status(500).json(err);
