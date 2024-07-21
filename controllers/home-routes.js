@@ -41,19 +41,27 @@ router.get("/feed", async (req, res) => {
 
 router.get("/dashboard/:username", async (req, res) => {
   try {
-    // Get posts
-    postData = await Post.findAll({
-      where: { username: req.params.username },
-      include: [{ model: User, model: Comment }],
-    });
-    const posts = postData.map((posts) => posts.get({ plain: true }));
+    // Ensure user is going to their own dashboard
+    if (req.session.username == req.params.username) {
+      // Get posts
+      postData = await Post.findAll({
+        where: { username: req.params.username },
+        include: [{ model: User, model: Comment }],
+      });
+      const posts = postData.map((posts) => posts.get({ plain: true }));
 
-    // Render page
-    res.render("dashboard", {
-      signedIn: req.session.signedIn,
-      username: req.session.username,
-      posts,
-    });
+      // Render page
+      res.render("dashboard", {
+        signedIn: req.session.signedIn,
+        username: req.session.username,
+        posts,
+      });
+    } else {
+      res.render("home", {
+        signedIn: req.session.signedIn,
+        username: req.session.username,
+      });
+    }
   } catch (err) {
     res.status(500).json(err);
   }

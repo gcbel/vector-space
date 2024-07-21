@@ -1,11 +1,11 @@
-<div class="card post">
+<div class="borders post">
   <a href="/post/{{id}}">
     <div class="card-header">
-      <h3>{{title}}</h3>
-      <h4>Posted by {{User.username}} on {{date}}</h4>
+      <h3>{{post.title}}</h3>
+      <h4>Posted by {{post.User.username}} on {{post.date}}</h4>
     </div>
     <div class="card-body">
-      <p class="card-text">{{content}}</p>
+      <p class="card-text">{{post.content}}</p>
     </div>
   </a>
 </div>

@@ -2,8 +2,8 @@
   <h2 class="page-title manrope">Feed</h2>
 
   <section class="hanken">
-    {{#each post as |post|}}
-    {{> post-details}}
+    {{#each posts as |post|}}
+    {{> post-details post=post}}
     {{/each}}
   </section>
 </div>

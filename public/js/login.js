@@ -59,7 +59,7 @@ const userSignIn = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/locations");
+      document.location.replace(`/dashboard/${user}`);
     } else {
       signinAlert.classList.remove("hidden");
     }
@@ -126,14 +126,14 @@ const userSignUp = async (event) => {
   }
 
   if (createAccount) {
-    const response = await fetch("/api/users", {
+    const response = await fetch("/api/users/signup", {
       method: "POST",
       body: JSON.stringify({ first, last, user, email, password }),
       headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-      document.location.replace("/dashboard");
+      document.location.replace(`/dashboard/${user}`);
     } else {
       signupAlert.classList.remove("hidden");
     }
