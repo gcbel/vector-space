@@ -3,8 +3,9 @@
   --background: #021627;
   --background-clear: #021627ca;
   --text-color: #ffffff;
+  --accent: #0d3252;
   --clear: #ffffff00;
-  --hover: #8faecb;
+  --hover: #49739a;
 }
 
 *,
@@ -25,9 +26,17 @@ html {
   font-style: normal;
 }
 
+.manrope {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  letter-spacing: -4px;
+}
+
 /* TEXT */
 nav a,
-footer a {
+footer a,
+#google-auth a {
   color: var(--text-color);
   text-decoration: none;
 }
@@ -67,72 +76,16 @@ footer a {
 }
 
 #homepage-title {
-  font-size: calc(8vw + 25px);
+  font-size: calc(6vw + 28px);
   font-weight: 300;
   margin: 0px;
+  font-weight: 500;
 }
 
 #homepage-subtitle {
   font-weight: 400;
   position: relative;
   margin: 10px 0px 0px 0px;
+  font-size: calc(2vw + 22px);
   z-index: -1;
-}
-
-/* LOGIN PAGE */
-#sign-in-menu,
-#sign-up-menu {
-  margin: 0px 20px 0px 20px; /* space out sign up and sign in buttons */
-}
-
-#signup-signin-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: 30px 10% 0px 10%;
-  font-size: 22px;
-  min-width: 150px;
-  width: 80%;
-}
-
-#sign-up {
-  display: none;
-}
-
-#sign-up,
-#sign-in,
-#google-auth {
-  padding: 20px;
-  max-width: 310px;
-}
-
-#google-auth {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-#signup-signin-box input {
-  padding: 4px;
-  width: 98%;
-}
-
-#sign-up-button,
-#sign-in-button {
-  margin-top: 10px;
-  border: 1px solid var(--dark-text);
-  padding: 6px 15px 6px 15px;
-  border-radius: 25px;
-}
-
-.signin-alert {
-  font-size: 16px;
-  color: var(--dark-hover);
-}
-
-.signin-alert-important {
-  font-size: 16px;
-  color: red;
 }

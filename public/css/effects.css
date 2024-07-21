@@ -6,6 +6,11 @@
   background-color: var(--clear);
 }
 
+.light-background {
+  background-color: var(--accent);
+  border-radius: 15px;
+}
+
 .borders:hover {
   border: 1px solid var(--hover);
 }
@@ -17,6 +22,7 @@
 .page-title,
 .page-subtitle {
   text-align: center;
+  color: var(--text-color);
 }
 
 .page-title {
@@ -30,7 +36,12 @@
 /* HOVER */
 nav a:hover,
 footer a:hover,
-#hamburger-nav-inner a:hover {
+#hamburger-nav-inner a:hover,
+#sign-in-menu:hover,
+#sign-up-menu:hover,
+#google-auth a:hover,
+#sign-up-button:hover,
+#sign-in-button:hover {
   color: var(--hover);
 }
 

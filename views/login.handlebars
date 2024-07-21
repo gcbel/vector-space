@@ -1,11 +1,11 @@
-<div id="login-page">
-  <div class="page-subtitle">
+<div class="hanken" id="login-page">
+  <div id="signin-signup-menu">
     <button class="borders hover" id="sign-in-menu">Sign in</button>
     <button class="borders hover" id="sign-up-menu">Sign up</button>
   </div>
 
   <div class="inter" id="signup-signin-box">
-    <section class="borders" id="sign-in">
+    <section class="light-background" id="sign-in">
       <p>Email:</p>
       <p class="hidden signin-alert" id="signin-email-alert">Please enter your
         email</p>
@@ -28,10 +28,10 @@
         email or password you entered does not match any existing account.
         Please try again!
       </p>
-      <button id="sign-in-button">Sign in</button>
+      <button class="borders" id="sign-in-button">Sign in</button>
     </section>
 
-    <section class="borders" id="sign-up">
+    <section class="light-background hidden" id="sign-up">
       <p>First name:</p>
       <p class="hidden signin-alert" id="signup-first-alert">Please enter your
         first name</p>
@@ -50,6 +50,17 @@
         id="sign-up-last"
         name="sign-up-last"
       />
+      <p>Username:</p>
+      <p class="hidden signin-alert" id="signup-user-alert-1">
+        Username must be more than 5 letters</p>
+      <p class="hidden signin-alert" id="signup-user-alert-2">
+        Username is taken, please try again</p>
+      <input
+        type="text"
+        class="borders"
+        id="sign-up-user"
+        name="sign-up-user"
+      />
       <p>Email:</p>
       <p class="hidden signin-alert" id="signup-email-alert">Please enter a
         valid email</p>
@@ -61,15 +72,15 @@
       />
       <p>Password:</p>
       <p class="hidden signin-alert" id="signup-password-alert">Please enter a
-        password longer than 6 characters</p>
+        password longer than 8 characters</p>
       <input
         type="password"
         class="borders"
         id="sign-up-password"
         name="sign-up-password"
       />
-      <button id="sign-up-button">Sign Up</button>
-      <p class="hidden signin-alert-important" id="signin-alert">Sorry, we were
+      <button class="borders" id="sign-up-button">Sign Up</button>
+      <p class="hidden signin-alert-important" id="signup-alert">Sorry, we were
         unable to create your account. Please try again.
       </p>
     </section>

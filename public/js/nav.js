@@ -1,4 +1,4 @@
-/* DEPENDENCIES */
+/* VARIABLES */
 const hamburgerMenu = document.querySelector("#hamburger-menu-outer");
 const hamburgerNav = document.querySelector("#hamburger-nav");
 const regularNav = document.querySelector("#regular-nav");

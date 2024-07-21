@@ -13,7 +13,10 @@ const signinAlert = document.querySelector("#signin-alert");
 const emailAlert = document.querySelector("#signup-email-alert");
 const firstAlert = document.querySelector("#signup-first-alert");
 const lastAlert = document.querySelector("#signup-last-alert");
+const userAlert1 = document.querySelector("#signup-user-alert-1");
+const userAlert2 = document.querySelector("#signup-user-alert-2");
 const passwordAlert = document.querySelector("#signup-password-alert");
+const signupAlert = document.querySelector("#signin-alert");
 
 /* FUNCTIONS */
 /* Show sign in and hide sign up */
@@ -68,44 +71,63 @@ const userSignUp = async (event) => {
 
   const first = document.querySelector("#sign-up-first").value;
   const last = document.querySelector("#sign-up-last").value;
+  const user = document.querySelector("#sign-up-user").value;
   const email = document.querySelector("#sign-up-email").value;
   const password = document.querySelector("#sign-up-password").value;
 
   const validEmail = isValidEmail(email);
+  const existingUser = await isExistingUsername(user);
+
+  let createAccount = true;
 
   if (!email || !validEmail) {
     emailAlert.classList.remove("hidden");
+    createAccount = false;
   } else {
     emailAlert.classList.add("hidden");
   }
 
   if (!first) {
     firstAlert.classList.remove("hidden");
+    createAccount = false;
   } else {
     firstAlert.classList.add("hidden");
   }
 
   if (!last) {
     lastAlert.classList.remove("hidden");
+    createAccount = false;
   } else {
     lastAlert.classList.add("hidden");
   }
 
-  if (!password || password.length < 6) {
+  if (!user || user.length < 5) {
+    userAlert1.classList.remove("hidden");
+    createAccount = false;
+  } else if (existingUser) {
+    userAlert2.classList.remove("hidden");
+    createAccount = false;
+  } else {
+    userAlert1.classList.add("hidden");
+    userAlert2.classList.add("hidden");
+  }
+
+  if (!password || password.length < 8) {
     passwordAlert.classList.remove("hidden");
+    createAccount = false;
   } else {
     passwordAlert.classList.add("hidden");
   }
 
-  if (first && last && email && password) {
+  if (createAccount) {
     const response = await fetch("/api/users", {
       method: "POST",
-      body: JSON.stringify({ first, last, email, password }),
+      body: JSON.stringify({ first, last, user, email, password }),
       headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-      document.location.replace("/locations");
+      document.location.replace("/dashboard");
     } else {
       signupAlert.classList.remove("hidden");
     }
@@ -115,11 +137,9 @@ const userSignUp = async (event) => {
 /* Check for submit key events */
 function keyPress(event) {
   if (event.key === "Enter") {
-    if (window.getComputedStyle(signInMenu).display !== "none") {
+    if (!signInSection.classList.contains("hidden")) {
       userSignIn(event);
-    }
-    // Check if #sign-up is visible
-    else if (window.getComputedStyle(signUpMenu).display !== "none") {
+    } else if (!signUpSection.classList.contains("hidden")) {
       userSignUp(event);
     }
   }
@@ -129,6 +149,21 @@ function keyPress(event) {
 function isValidEmail(email) {
   const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   return emailRegex.test(email);
+}
+
+/* Checks if username exists in database */
+async function isExistingUsername(username) {
+  try {
+    const response = await fetch(`/api/check-user/${username}`);
+    if (response.ok) {
+      const { exists } = await response.json();
+      return exists;
+    } else {
+      return false;
+    }
+  } catch (err) {
+    return false;
+  }
 }
 
 /* EVENT LISTENERS */
