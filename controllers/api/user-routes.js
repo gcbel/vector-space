@@ -47,11 +47,12 @@ router.post("/login", async (req, res) => {
       res.status(400).json({ message: "Incorrect email or password." });
     } else {
       req.session.save(() => {
-        req.session.loggedIn = true;
+        req.session.signedIn = true;
         res.status(200).json({ user: user, message: "Success!" });
       });
     }
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });

@@ -19,7 +19,7 @@ router.get(
     // Successful authentication
     console.log(req.user);
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.signedIn = true;
       res.redirect("/locations");
     });
   }

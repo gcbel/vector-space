@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
   try {
     // Render page
     res.render("home", {
-      loggedIn: req.session.loggedIn,
+      signedIn: req.session.signedIn,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -29,7 +29,7 @@ router.get("/feed", async (req, res) => {
 
     // Render page
     res.render("feed", {
-      loggedIn: req.session.loggedIn,
+      signedIn: req.session.signedIn,
       posts,
     });
   } catch (err) {
@@ -48,7 +48,7 @@ router.get("/dashboard/username", async (req, res) => {
 
     // Render page
     res.render("dashboard", {
-      loggedIn: req.session.loggedIn,
+      signedIn: req.session.signedIn,
       userPosts,
     });
   } catch (err) {
@@ -59,13 +59,13 @@ router.get("/dashboard/username", async (req, res) => {
 /* Get request for login page */
 router.get("/login", async (req, res) => {
   try {
-    if (req.session.loggedIn) {
+    if (req.session.signedIn) {
       res.redirect("/locations");
       return;
     }
     // Render
     res.render("login", {
-      loggedIn: true,
+      signedIn: req.session.signedIn,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -77,7 +77,7 @@ router.get("*", async (req, res) => {
   try {
     // Render
     res.render("404", {
-      loggedIn: req.session.loggedIn,
+      signedIn: req.session.signedIn,
     });
   } catch (err) {
     res.status(500).json(err);
