@@ -9,6 +9,7 @@ nav {
   height: 60px;
   z-index: 1;
   font-size: calc(0.5vw + 20px);
+  min-width: 300px;
 }
 
 nav a {
@@ -73,7 +74,6 @@ nav a {
 
 /* HAMBURGER NAV CONTENT */
 #hamburger-nav {
-  color: var(--light-text);
   position: fixed;
   top: 0;
   left: 0;
@@ -93,5 +93,12 @@ nav a {
 }
 
 #hamburger-nav-inner a {
-  padding: 20px;
+  color: var(--light-text);
+  text-decoration: none;
+  margin: 20px;
+}
+
+#hamburger-nav-inner #login,
+#hamburger-nav-inner #logout {
+  padding: 8px 14px 8px 14px;
 }

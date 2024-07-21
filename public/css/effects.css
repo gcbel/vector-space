@@ -3,15 +3,34 @@
   border: 1px solid var(--text-color);
   border-radius: 15px;
   padding: 6px 12px 6px 12px;
+  background-color: var(--clear);
 }
 
 .borders:hover {
   border: 1px solid var(--hover);
 }
 
+.page {
+  margin: 0px 8vw 50px 8vw;
+}
+
+.page-title,
+.page-subtitle {
+  text-align: center;
+}
+
+.page-title {
+  font-size: calc(2vw + 20px);
+}
+
+.page-subtitle {
+  font-size: calc(1.2vw + 20px);
+}
+
 /* HOVER */
 nav a:hover,
-footer a:hover {
+footer a:hover,
+#hamburger-nav-inner a:hover {
   color: var(--hover);
 }
 
