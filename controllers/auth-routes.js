@@ -20,7 +20,8 @@ router.get(
     console.log(req.user);
     req.session.save(() => {
       req.session.signedIn = true;
-      res.redirect("/locations");
+      req.session.username = true;
+      res.redirect("/feed");
     });
   }
 );

@@ -27,6 +27,8 @@
 
 .page-title {
   font-size: calc(2vw + 20px);
+  margin-top: 40px;
+  letter-spacing: -2px;
 }
 
 .page-subtitle {

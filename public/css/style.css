@@ -1,11 +1,12 @@
 /* GENERAL */
 :root {
-  --background: #021627;
+  --background: #011322;
   --background-clear: #021627ca;
   --text-color: #ffffff;
   --accent: #0d3252;
   --clear: #ffffff00;
   --hover: #49739a;
+  --accent-text: #b6cfe7;
 }
 
 *,
@@ -30,7 +31,6 @@ html {
   font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  letter-spacing: -4px;
 }
 
 /* TEXT */
@@ -80,6 +80,7 @@ footer a {
   font-weight: 300;
   margin: 0px;
   font-weight: 500;
+  letter-spacing: -4px;
 }
 
 #homepage-subtitle {

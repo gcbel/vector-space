@@ -12,7 +12,7 @@
     <div id="regular-nav">
       <a href="/feed">Feed</a>
       {{#if signedIn}}
-        <a href="/dashboard">Dashboard</a>
+        <a href="/dashboard/{{username}}">Dashboard</a>
         <a href="/logout" class="borders" id="logout">Logout</a>
         {{! JAVASCRIPT }}
         <script src="/js/logout.js"></script>
@@ -29,7 +29,7 @@
   <div id="hamburger-nav-inner">
     <a href="/feed">Feed</a>
     {{#if signedIn}}
-      <a href="/dashboard">Dashboard</a>
+      <a href="/dashboard/{{username}}">Dashboard</a>
       <a href="/logout" class="borders" id="logout">Logout</a>
     {{else}}
       <a href="/login">Dashboard</a>

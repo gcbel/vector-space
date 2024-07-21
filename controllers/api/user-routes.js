@@ -18,6 +18,7 @@ router.post("/", async (req, res) => {
     // Sign in user
     req.session.save(() => {
       req.session.signedIn = true;
+      req.session.username = req.body.user;
       res.status(200).json(user);
     });
   } catch (err) {
@@ -32,7 +33,7 @@ router.post("/login", async (req, res) => {
     // Search for email in database
     const user = await User.findOne({
       where: {
-        email: req.body.email,
+        username: req.body.user,
       },
     });
 
@@ -42,12 +43,13 @@ router.post("/login", async (req, res) => {
       correctPassword = await user.checkPassword(req.body.password);
     }
 
-    // If email not found or password doesn't match, reject
+    // If username not found or password doesn't match, reject
     if (!user || !correctPassword) {
-      res.status(400).json({ message: "Incorrect email or password." });
+      res.status(400).json({ message: "Incorrect username or password." });
     } else {
       req.session.save(() => {
         req.session.signedIn = true;
+        req.session.username = req.body.user;
         res.status(200).json({ user: user, message: "Success!" });
       });
     }

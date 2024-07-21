@@ -6,7 +6,7 @@ const signUpSection = document.getElementById("sign-up");
 const signup = document.querySelector("#sign-up-button");
 const signin = document.querySelector("#sign-in-button");
 
-const signinEmailAlert = document.querySelector("#signin-email-alert");
+const signinUserAlert = document.querySelector("#signin-user-alert");
 const signinPasswordAlert = document.querySelector("#signin-password-alert");
 const signinAlert = document.querySelector("#signin-alert");
 
@@ -36,13 +36,13 @@ function showSignUp() {
 const userSignIn = async (event) => {
   event.preventDefault();
 
-  const email = document.querySelector("#sign-in-email").value;
+  const user = document.querySelector("#sign-in-user").value;
   const password = document.querySelector("#sign-in-password").value;
 
-  if (!email) {
-    signinEmailAlert.classList.remove("hidden");
+  if (!user) {
+    signinUserAlert.classList.remove("hidden");
   } else {
-    signinEmailAlert.classList.add("hidden");
+    signinUserAlert.classList.add("hidden");
   }
 
   if (!password) {
@@ -51,10 +51,10 @@ const userSignIn = async (event) => {
     signinPasswordAlert.classList.add("hidden");
   }
 
-  if (email && password) {
+  if (user && password) {
     const response = await fetch("/api/users/login", {
       method: "POST",
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ user, password }),
       headers: { "Content-Type": "application/json" },
     });
 
@@ -79,9 +79,6 @@ const userSignUp = async (event) => {
   const validEmail = isValidEmail(email);
   const existingEmail = await isExistingEmail(email);
   const existingUser = await isExistingUsername(user);
-  console.log(
-    `Existing email: ${existingEmail}, Existing email: ${existingUser}`
-  );
 
   let createAccount = true;
 
