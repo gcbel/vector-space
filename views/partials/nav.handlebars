@@ -1,0 +1,32 @@
+<nav class="hanken">
+  <a href="/" id="logo"><img
+      src="/images/logo.png"
+      alt="VectorSpace Logo"
+    /></a>
+  <div>
+    <i class="fa-solid fa-bars hidden fade-in" id="hamburger-menu"></i>
+    <i class="fa-solid fa-x hidden" id="close-menu"></i>
+    <a href="/feed">Feed</a>
+    <a href="/dashboard">Dashboard</a>
+    {{#if signedIn}}
+      <a href="/logout" class="borders" id="logout">Logout</a>
+      {{! JAVASCRIPT }}
+      <script src="/js/logout.js"></script>
+    {{else}}
+      <a href="/login" class="borders" id="login">Login</a>
+    {{/if}}
+  </div>
+</nav>
+
+{{! HAMBURGER MENU }}
+<div class="hidden fade-in-quick inter" id="hamburger-nav">
+  <div id="hamburger-nav-inner">
+    <a href="/feed" class="fade-in">Feed</a>
+    <a href="/dashboard" class="fade-in">Dashboard</a>
+    {{#if signedIn}}
+      <a href="/logout" class="borders fade-in" id="logout">Logout</a>
+    {{else}}
+      <a href="/login" class="borders fade-in" id="login">Login</a>
+    {{/if}}
+  </div>
+</div>

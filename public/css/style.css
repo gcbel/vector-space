@@ -18,28 +18,11 @@ html {
   font-style: normal;
 }
 
-/* STYLE CLASSES */
-.borders {
-  border: 1px solid var(--text-color);
-  border-radius: 15px;
-  padding: 6px 12px 6px 12px;
-}
-
-.borders:hover {
-  border: 1px solid var(--hover);
-}
-
 /* TEXT */
 nav a,
 footer a {
   color: var(--text-color);
   text-decoration: none;
-}
-
-nav a:hover,
-footer a:hover {
-  color: var(--hover);
-  border-bottom: 1px solid var(--hover);
 }
 
 /* NAV */

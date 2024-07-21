@@ -1,0 +1,21 @@
+/* STYLE CLASSES */
+.borders {
+  border: 1px solid var(--text-color);
+  border-radius: 15px;
+  padding: 6px 12px 6px 12px;
+}
+
+.borders:hover {
+  border: 1px solid var(--hover);
+}
+
+/* HOVER */
+nav a:hover,
+footer a:hover {
+  color: var(--hover);
+}
+
+/* HIDE */
+.hidden {
+  display: none;
+}
