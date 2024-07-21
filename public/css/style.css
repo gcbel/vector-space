@@ -5,6 +5,12 @@
   --hover: #8faecb;
 }
 
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 html {
   color: var(--text-color);
   background-color: var(--background);
@@ -23,29 +29,6 @@ nav a,
 footer a {
   color: var(--text-color);
   text-decoration: none;
-}
-
-/* NAV */
-nav {
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 18px 6px 24px;
-  align-items: center;
-  height: 60px;
-  z-index: 1;
-  font-size: calc(0.5vw + 20px);
-}
-
-nav a {
-  margin: 0px 8px 0px 8px;
-}
-
-#logo img {
-  width: 42px;
-  height: auto;
-  margin: 0px 0px 6px 0px;
 }
 
 /* FOOTER */

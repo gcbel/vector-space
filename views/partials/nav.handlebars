@@ -4,17 +4,22 @@
       alt="VectorSpace Logo"
     /></a>
   <div>
-    <i class="fa-solid fa-bars hidden fade-in" id="hamburger-menu"></i>
-    <i class="fa-solid fa-x hidden" id="close-menu"></i>
-    <a href="/feed">Feed</a>
-    <a href="/dashboard">Dashboard</a>
-    {{#if signedIn}}
-      <a href="/logout" class="borders" id="logout">Logout</a>
-      {{! JAVASCRIPT }}
-      <script src="/js/logout.js"></script>
-    {{else}}
-      <a href="/login" class="borders" id="login">Login</a>
-    {{/if}}
+    <div class="hidden" id="hamburger-menu-outer">
+      <label class="hamburger-menu">
+        <input type="checkbox" />
+      </label>
+    </div>
+    <div id="regular-nav">
+      <a href="/feed">Feed</a>
+      <a href="/dashboard">Dashboard</a>
+      {{#if signedIn}}
+        <a href="/logout" class="borders" id="logout">Logout</a>
+        {{! JAVASCRIPT }}
+        <script src="/js/logout.js"></script>
+      {{else}}
+        <a href="/login" class="borders" id="login">Login</a>
+      {{/if}}
+    </div>
   </div>
 </nav>
 
