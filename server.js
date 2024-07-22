@@ -4,6 +4,7 @@ const path = require("path");
 const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
+const helpers = require("./utils/helpers");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const passport = require("./config/passport");
 
@@ -27,7 +28,9 @@ const sess = {
 app.use(session(sess));
 
 /* HANDLEBARS */
-const hbs = exphbs.create({});
+const hbs = exphbs.create({
+  helpers: helpers,
+});
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 app.set("views", path.join(__dirname, "views"));

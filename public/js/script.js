@@ -4,7 +4,6 @@ const darkMode = window.matchMedia("(prefers-color-scheme: dark)");
 
 /* FUNCTIONS */
 function updateIcon(darkMode) {
-  console.log(darkMode);
   if (darkMode.matches) {
     icon.href = "images/logo-dark.png";
   } else {

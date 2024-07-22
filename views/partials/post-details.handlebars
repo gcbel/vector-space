@@ -1,14 +1,21 @@
-<div class="post borders">
-  <a href="/post/{{id}}">
+<a href="/post/{{id}}">
+  <div class="post borders">
     <div class="post-header">
       <h3>{{post.title}}</h3>
       <h4>Posted by
         <span id="post-username">{{post.user.username}}</span>
         on
-        {{post.date}}</h4>
+        {{getDate post.date}}</h4>
     </div>
     <div class="post-body">
       <p>{{post.content}}</p>
     </div>
-  </a>
-</div>
+    <div class="post-comment-number light-background">
+      {{#ifvalue post.comments.length value=1}}
+        <p>{{post.comments.length}} comment</p>
+      {{else}}
+        <p>{{post.comments.length}} comments</p>
+      {{/ifvalue}}
+    </div>
+  </div>
+</a>

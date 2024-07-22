@@ -3,12 +3,12 @@
   margin: 40px 5vw 60px 5vw;
 }
 
-.post {
-  padding: 16px 20px 16px 20px;
+.posts a {
+  text-decoration: none;
 }
 
-.post a {
-  text-decoration: none;
+.post {
+  padding: 16px 20px 16px 20px;
 }
 
 .post h3 {
@@ -16,14 +16,20 @@
   font-size: 24px;
 }
 
+.post:hover h3,
+.post:hover .post-body p {
+  color: var(--hover);
+}
+
 .post h4 {
   color: var(--hover);
   font-size: 18px;
 }
 
-.post p {
+.post-body p {
   color: var(--text-color);
   font-size: 20px;
+  font-weight: 300;
 }
 
 .post-header {
@@ -35,6 +41,16 @@
 
 #post-username {
   color: var(--accent-text);
+}
+
+.post-comment-number {
+  padding: 8px 12px 8px 12px;
+  margin-top: 10px;
+}
+
+.post-comment-number p {
+  color: var(--text-color);
+  font-size: 18px;
 }
 
 /* MOBILE */

@@ -26,13 +26,39 @@ router.get("/feed", async (req, res) => {
       ],
     });
     const posts = postData.map((posts) => posts.get({ plain: true }));
-    console.log(posts);
 
     // Render page
     res.render("feed", {
       signedIn: req.session.signedIn,
       username: req.session.username,
       posts,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/post/:id", async (req, res) => {
+  try {
+    // Get post by ID
+    const postData = await Post.findOne({
+      where: { id: req.params.id },
+      include: [
+        { model: User },
+        { model: Comment, include: [{ model: User }] },
+      ],
+    });
+
+    if (!postData) {
+      return res.status(404).json({ message: "Post not found" });
+    }
+    const post = postData.get({ plain: true });
+    console.log(post);
+    // Render page
+    res.render("post", {
+      signedIn: req.session.signedIn,
+      username: req.session.username,
+      post,
     });
   } catch (err) {
     res.status(500).json(err);
