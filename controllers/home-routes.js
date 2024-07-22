@@ -1,6 +1,5 @@
 /* DEPENDECIES */
 const router = require("express").Router();
-// const { authenticate } = require("../utils/helpers.js"); // Import authentication middleware
 const { Post, User, Comment } = require("../models/index.js"); // Import models
 
 /* ROUTES */
@@ -27,6 +26,7 @@ router.get("/feed", async (req, res) => {
       ],
     });
     const posts = postData.map((posts) => posts.get({ plain: true }));
+    console.log(posts);
 
     // Render page
     res.render("feed", {

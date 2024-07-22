@@ -1,0 +1,59 @@
+/* POSTS */
+.posts {
+  margin: 40px 5vw 60px 5vw;
+}
+
+.post {
+  padding: 16px 20px 16px 20px;
+}
+
+.post a {
+  text-decoration: none;
+}
+
+.post h3 {
+  color: var(--accent-text);
+  font-size: 24px;
+}
+
+.post h4 {
+  color: var(--hover);
+  font-size: 18px;
+}
+
+.post p {
+  color: var(--text-color);
+  font-size: 20px;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+#post-username {
+  color: var(--accent-text);
+}
+
+/* MOBILE */
+@media (min-width: 480px) {
+  .posts {
+    margin: 40px 8vw 60px 8vw;
+  }
+}
+
+/* TABLETS */
+@media (min-width: 768px) {
+  .posts {
+    margin: 40px 12vw 60px 12vw;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .posts {
+    margin: 40px 20vw 60px 20vw;
+  }
+}
