@@ -75,16 +75,29 @@ router.get("/dashboard/:username", async (req, res) => {
     if (req.session.username == req.params.username) {
       // Get posts
       postData = await Post.findAll({
-        where: { username: req.params.username },
-        include: [{ model: User, model: Comment }],
+        include: [
+          { model: User },
+          { model: Comment, include: [{ model: User }] },
+        ],
       });
+      if (!postData) {
+        return res.status(404).render("dashboard", {
+          signedIn: req.session.signedIn,
+          username: req.session.username,
+        });
+      }
       const posts = postData.map((posts) => posts.get({ plain: true }));
+
+      // Get only user's posts
+      const usersPosts = posts.filter(
+        (post) => post.user.username === req.params.username
+      );
 
       // Render page
       res.render("dashboard", {
         signedIn: req.session.signedIn,
         username: req.session.username,
-        posts,
+        usersPosts,
       });
     } else {
       res.render("home", {
