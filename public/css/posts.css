@@ -7,21 +7,26 @@
   text-decoration: none;
 }
 
-.post {
+.post,
+.post-page,
+.comment {
   padding: 16px 20px 16px 20px;
 }
 
-.post h3 {
+.post-page {
+  border: 1px solid var(--text-color);
+  border-radius: 15px;
+  background-color: var(--clear);
+}
+
+.post h3,
+.post-page h3 {
   color: var(--accent-text);
   font-size: 24px;
 }
 
-.post:hover h3,
-.post:hover .post-body p {
-  color: var(--hover);
-}
-
-.post h4 {
+.post h4,
+.post-page h4 {
   color: var(--hover);
   font-size: 18px;
 }
@@ -51,6 +56,38 @@
 .post-comment-number p {
   color: var(--text-color);
   font-size: 18px;
+}
+
+.post:hover h3,
+.post:hover .post-body p {
+  color: var(--hover);
+}
+
+/* COMMENTS */
+.comment {
+  margin: 20px 0px 0px 15vw;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment h3 {
+  color: var(--accent-text);
+  font-size: 24px;
+}
+
+.comment h4 {
+  color: var(--hover);
+  font-size: 18px;
+}
+
+.comment p {
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: 8px;
 }
 
 /* MOBILE */

@@ -1,6 +1,5 @@
-{{#each post as |post|}}
-<a href="/post/{{id}}">
-  <div class="post borders">
+<div class="posts hanken">
+  <div class="post-page">
     <div class="post-header">
       <h3>{{post.title}}</h3>
       <h4>Posted by
@@ -12,11 +11,20 @@
       <p>{{post.content}}</p>
     </div>
   </div>
-</a>
 
-<section>
-  {{#each comment as |comment|}}
-  {{> comment-details}}
-  {{/each}}
-</section>
-{{/each}}
+  <section class="comments">
+    {{#each post.comments as |comment|}}
+      <div class="comment light-background">
+        <div class="comment-header">
+          <h4>Posted by
+            <span id="post-username">{{comment.user.username}}</span>
+            on
+            {{getDate comment.date}}</h4>
+        </div>
+        <div class="comment-body">
+          <p class="comment-text">{{comment.content}}</p>
+        </div>
+      </div>
+    {{/each}}
+  </section>
+</div>

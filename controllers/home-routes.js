@@ -50,10 +50,14 @@ router.get("/post/:id", async (req, res) => {
     });
 
     if (!postData) {
-      return res.status(404).json({ message: "Post not found" });
+      return res.status(404).render("404", {
+        signedIn: req.session.signedIn,
+        username: req.session.username,
+      });
     }
     const post = postData.get({ plain: true });
     console.log(post);
+
     // Render page
     res.render("post", {
       signedIn: req.session.signedIn,
