@@ -1,21 +1,45 @@
 <div class="page">
   <h2 class="page-title manrope">Dashboard</h2>
 
-  <div class="posts">
-    <div id="add-section-outer">
-      <section class="light-background hanken" id="add-section">
-        <p><i class="fa-solid fa-plus"></i> New post</p>
+  <div class="posts hanken">
+    <div id="new-post-outer">
+      <section class="light-background" id="new-post">
+        <p id="plus"><i class="fa-solid fa-plus"></i> New post</p>
       </section>
 
-      <section class="hidden" id="new=post">
-        
+      <section class="light-background" id="new-post-section">
+        <div id="title-and-x">
+          <p>Title:</p>
+          <i class="fa-solid fa-x" id="x-out"></i>
+        </div>
+        <p class="hidden post-alert" id="post-title-alert">Please enter
+          a title for your post</p>
+        <input
+          type="text"
+          class="borders"
+          id="post-title"
+          name="post-title"
+        />
+        <p>Content:</p>
+        <p class="hidden post-alert" id="post-title-alert">Please enter
+          content for your post</p>
+        <input
+          type="text"
+          class="borders"
+          id="post-content"
+          name="post-content"
+        />
+        <button class="borders">Post</button>
       </section>
     </div>
 
-    <section class="hanken posts">
+    <section class="posts">
       {{#each posts as |post|}}
       {{> post-details post=post}}
       {{/each}}
     </section>
   </div>
 </div>
+
+{{! JAVASCRIPT }}
+<script src="/js/new-post.js"></script>
