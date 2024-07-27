@@ -1,6 +1,7 @@
 /* DEPENDENCIES */
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
+const { TABLES } = require("./constants");
 
 /* CLASS */
 class Post extends Model {}
@@ -29,7 +30,7 @@ Post.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "user",
+        model: TABLES.USER,
         key: "id",
       },
     },

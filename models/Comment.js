@@ -1,6 +1,7 @@
 /* DEPENDENCIES */
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
+const { TABLES } = require("./constants");
 
 /* CLASS */
 class Comment extends Model {}
@@ -25,7 +26,7 @@ Comment.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "user",
+        model: TABLES.USER,
         key: "id",
       },
     },
@@ -33,7 +34,7 @@ Comment.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "post",
+        model: TABLES.POST,
         key: "id",
       },
     },
