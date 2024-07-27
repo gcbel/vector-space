@@ -5,11 +5,11 @@ require("dotenv").config();
 /* SEQUELIZE */
 const sequelize = process.env.DB_URL
   ? new Sequelize(process.env.DB_URL, {
-      hooks: {
-        beforeDefine: function (columns, model) {
-          model.tableName = `${process.env.DB_NAME}_${model.name.singluar}`;
-        },
-      },
+      // hooks: {
+      //   beforeDefine: function (columns, model) {
+      //     model.tableName = `${process.env.DB_NAME}_${model.name.singluar}`;
+      //   },
+      // },
     })
   : new Sequelize(
       process.env.DB_NAME,
@@ -18,11 +18,11 @@ const sequelize = process.env.DB_URL
       {
         host: "localhost",
         dialect: "postgres",
-        hooks: {
-          beforeDefine: function (columns, model) {
-            model.tableName = `${process.env.DB_NAME}_${model.name.singular}`;
-          },
-        },
+        // hooks: {
+        //   beforeDefine: function (columns, model) {
+        //     model.tableName = `${process.env.DB_NAME}_${model.name.singular}`;
+        //   },
+        // },
       }
     );
 

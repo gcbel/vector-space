@@ -2,6 +2,7 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 const bcrypt = require("bcrypt");
+const { TABLES } = require("./constants");
 
 /* CLASS */
 class User extends Model {
@@ -41,7 +42,7 @@ User.init(
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: true, // Allows Google OAuth
+      allowNull: true, // Allows Google OAuth, checks for length >= 8 on front end
     },
     googleId: {
       type: DataTypes.STRING,
@@ -59,8 +60,8 @@ User.init(
     },
     sequelize,
     freezeTableName: true,
-    tableName: "user",
-    modelName: "user",
+    tableName: TABLES.USER,
+    modelName: TABLES.USER,
   }
 );
 

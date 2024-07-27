@@ -39,8 +39,8 @@ Post.init(
     sequelize,
     timestamps: true,
     freezeTableName: true,
-    tableName: "post",
-    modelName: "post",
+    tableName: TABLES.POST,
+    modelName: TABLES.POST,
   }
 );
 

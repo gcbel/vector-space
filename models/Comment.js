@@ -43,8 +43,8 @@ Comment.init(
     sequelize,
     timestamps: true,
     freezeTableName: true,
-    modelName: "comment",
-    tableName: "comment",
+    modelName: TABLES.COMMENT,
+    tableName: TABLES.COMMENT,
   }
 );
 
