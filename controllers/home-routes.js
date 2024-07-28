@@ -68,35 +68,25 @@ router.get("/post/:id", async (req, res) => {
   }
 });
 
+/* Get request for user's own dashboard page, redirects if not their own */
 router.get("/dashboard/:username", async (req, res) => {
   try {
     // Ensure user is going to their own dashboard
     if (req.session.username == req.params.username) {
       // Get posts
-      postData = await Post.findAll({
+      const postData = await Post.findAll({
         include: [
-          { model: User },
+          { model: User, where: { username: req.params.username } }, // Get only user's posts
           { model: Comment, include: [{ model: User }] },
         ],
       });
-      if (!postData) {
-        return res.status(404).render("dashboard", {
-          signedIn: req.session.signedIn,
-          username: req.session.username,
-        });
-      }
       const posts = postData.map((posts) => posts.get({ plain: true }));
-
-      // Get only user's posts
-      const usersPosts = posts.filter(
-        (post) => post.user.username === req.params.username
-      );
 
       // Render page
       res.render("dashboard", {
         signedIn: req.session.signedIn,
         username: req.session.username,
-        usersPosts,
+        posts,
       });
     } else {
       res.render("home", {
