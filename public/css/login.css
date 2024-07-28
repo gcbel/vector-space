@@ -34,8 +34,7 @@
   max-width: 340px;
 }
 
-#signup-signin-box input,
-#new-post-section input {
+#signup-signin-box input {
   color: var(--text-color);
   padding: 4px;
   width: 98%;

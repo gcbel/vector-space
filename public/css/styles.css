@@ -3,9 +3,11 @@
   --background: #011322;
   --background-clear: #021627ca;
   --text-color: #ffffff;
+  --light-accent: #184063;
   --accent: #0d3252;
   --clear: #ffffff00;
-  --hover: #49739a;
+  --modal-hover: #668eb3;
+  --hover: #95b6d8;
   --accent-text: #b6cfe7;
   --accent-background: #84add3;
 }

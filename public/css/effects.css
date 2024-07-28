@@ -12,10 +12,10 @@
 }
 
 .full-border {
-  color: var(--accent);
+  color: var(--light-accent);
   background-color: var(--accent-background);
   border-radius: 15px;
-  border: 1px solid var(--hover);
+  border: 1px solid var(--light-accent);
 }
 
 .full-border:hover {
@@ -47,6 +47,13 @@
   font-size: calc(1.2vw + 20px);
 }
 
+.modal-look {
+  color: var(--background);
+  background-color: var(--text-color);
+  border: 1px solid var(--background);
+  border-radius: 15px;
+}
+
 /* HOVER */
 nav a:hover,
 footer a:hover,
@@ -54,8 +61,7 @@ footer a:hover,
 #sign-in-menu:hover,
 #sign-up-menu:hover,
 #sign-up-button:hover,
-#sign-in-button:hover,
-#post-new-post-button:hover {
+#sign-in-button:hover {
   color: var(--hover);
 }
 

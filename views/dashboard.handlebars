@@ -1,18 +1,18 @@
 <div class="page">
   <h2 class="page-title manrope">Dashboard</h2>
 
-  <div class="posts hanken">
+  <div class="hanken">
     <div id="new-post-outer">
       <section class="full-border" id="new-post">
         <p id="plus"><i class="fa-solid fa-plus"></i> New post</p>
       </section>
+    </div>
 
     <section class="posts">
       {{#each posts as |post|}}
       {{> post-details post=post}}
       {{/each}}
     </section>
-  </div>
 </div>
 
 <div class="hidden hanken" id="new-post-section">
@@ -25,22 +25,20 @@
       a title for your post</p>
     <input
       type="text"
-      class="borders"
       id="post-title"
       name="post-title"
     />
-    <p>Content:</p>
+    <p id="new-post-content">Content:</p>
     <p class="hidden post-alert" id="post-content-alert">Please enter
       content for your post</p>
     <input
       type="text"
-      class="borders"
       id="post-content"
       name="post-content"
     />
     <p class="hidden post-alert" id="post-alert">Sorry, we weren't able to create that post. Try again later!
   </p>
-    <button class="borders" id="post-new-post-button">Post</button>
+    <button id="post-new-post-button">Post</button>
   </section>
 </div>
 
