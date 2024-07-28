@@ -3,35 +3,9 @@
 
   <div class="posts hanken">
     <div id="new-post-outer">
-      <section class="light-background" id="new-post">
+      <section class="full-border" id="new-post">
         <p id="plus"><i class="fa-solid fa-plus"></i> New post</p>
       </section>
-
-      <section class="light-background" id="new-post-section">
-        <div id="title-and-x">
-          <p>Title:</p>
-          <i class="fa-solid fa-x" id="x-out"></i>
-        </div>
-        <p class="hidden post-alert" id="post-title-alert">Please enter
-          a title for your post</p>
-        <input
-          type="text"
-          class="borders"
-          id="post-title"
-          name="post-title"
-        />
-        <p>Content:</p>
-        <p class="hidden post-alert" id="post-title-alert">Please enter
-          content for your post</p>
-        <input
-          type="text"
-          class="borders"
-          id="post-content"
-          name="post-content"
-        />
-        <button class="borders">Post</button>
-      </section>
-    </div>
 
     <section class="posts">
       {{#each posts as |post|}}
@@ -39,6 +13,35 @@
       {{/each}}
     </section>
   </div>
+</div>
+
+<div class="hidden hanken" id="new-post-section">
+  <section class="modal-look fade-in-quick" id="new-post-section-inner">
+    <div id="title-and-x">
+      <p>Title:</p>
+      <i class="fa-solid fa-x" id="x-out"></i>
+    </div>
+    <p class="hidden post-alert" id="post-title-alert">Please enter
+      a title for your post</p>
+    <input
+      type="text"
+      class="borders"
+      id="post-title"
+      name="post-title"
+    />
+    <p>Content:</p>
+    <p class="hidden post-alert" id="post-content-alert">Please enter
+      content for your post</p>
+    <input
+      type="text"
+      class="borders"
+      id="post-content"
+      name="post-content"
+    />
+    <p class="hidden post-alert" id="post-alert">Sorry, we weren't able to create that post. Try again later!
+  </p>
+    <button class="borders" id="post-new-post-button">Post</button>
+  </section>
 </div>
 
 {{! JAVASCRIPT }}

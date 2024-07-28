@@ -11,6 +11,18 @@
   border-radius: 15px;
 }
 
+.full-border {
+  color: var(--accent);
+  background-color: var(--accent-background);
+  border-radius: 15px;
+  border: 1px solid var(--hover);
+}
+
+.full-border:hover {
+  color: var(--background);
+  border: 1px solid var(--accent-background);
+}
+
 .borders:hover {
   border: 1px solid var(--hover);
 }
@@ -41,9 +53,9 @@ footer a:hover,
 #hamburger-nav-inner a:hover,
 #sign-in-menu:hover,
 #sign-up-menu:hover,
-#google-auth a:hover,
 #sign-up-button:hover,
-#sign-in-button:hover {
+#sign-in-button:hover,
+#post-new-post-button:hover {
   color: var(--hover);
 }
 

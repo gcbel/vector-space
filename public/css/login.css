@@ -64,21 +64,31 @@
 }
 
 #google-auth {
-  margin-top: 20px;
+  color: var(--accent);
+  font-size: 22px;
+  margin: 28px 0px 0px 0px;
+  padding: 0px;
   display: flex;
   justify-content: center;
   text-align: center;
+  text-decoration: none;
 }
 
-#google-auth a {
-  font-size: 22px;
-  margin: 0px 4px 0px 4px;
-  color: var(--text-color);
+#google-auth:hover {
+  color: var(--background);
+}
+
+#google-auth-inner {
+  padding: 20px 20px 20px 20px;
 }
 
 /* LOGIN BREAKPOINT */
 @media (min-width: 422px) {
-  #google-auth a {
-    margin: 0px 28px 0px 28px;
+  #google-auth p {
+    width: 340px;
+  }
+
+  #google-auth-inner {
+    padding: 20px 32px 20px 32px;
   }
 }
