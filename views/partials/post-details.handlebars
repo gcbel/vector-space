@@ -3,7 +3,7 @@
     <div class="post-header">
       <h3>{{post.title}}</h3>
       <h4>Posted by
-        <span id="post-username">{{post.user.username}}</span>
+        <span id="post-username">{{post.vector_space_db_user.username}}</span>
         on
         {{getDate post.date}}</h4>
     </div>
@@ -11,10 +11,10 @@
       <p>{{post.content}}</p>
     </div>
     <div class="post-comment-number light-background">
-      {{#ifvalue post.comments.length value=1}}
-        <p>{{post.comments.length}} comment</p>
+      {{#ifvalue post.vector_space_db_comments.length value=1}}
+        <p>{{post.vector_space_db_comments.length}} comment</p>
       {{else}}
-        <p>{{post.comments.length}} comments</p>
+        <p>{{post.vector_space_db_comments.length}} comments</p>
       {{/ifvalue}}
     </div>
   </div>

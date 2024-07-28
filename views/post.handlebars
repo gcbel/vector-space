@@ -3,7 +3,7 @@
     <div class="post-header">
       <h3>{{post.title}}</h3>
       <h4>Posted by
-        <span id="post-username">{{post.user.username}}</span>
+        <span id="post-username">{{post.vector_space_db_user.username}}</span>
         on
         {{getDate post.date}}</h4>
     </div>
@@ -13,11 +13,13 @@
   </div>
 
   <section class="comments">
-    {{#each post.comments as |comment|}}
+    {{#each post.vector_space_db_comments as |comment|}}
       <div class="comment light-background">
         <div class="comment-header">
           <h4>Posted by
-            <span id="post-username">{{comment.user.username}}</span>
+            <span
+              id="post-username"
+            >{{comment.vector_space_db_user.username}}</span>
             on
             {{getDate comment.date}}</h4>
         </div>
