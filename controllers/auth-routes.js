@@ -3,7 +3,7 @@ const router = require("express").Router();
 const passport = require("../config/passport");
 
 /* ROUTES */
-/* Route to start OAuth2 authentication */
+/* Get route to /auth/google, route to start OAuth2 authentication */
 router.get(
   "/google",
   passport.authenticate("google", {
@@ -11,13 +11,12 @@ router.get(
   })
 );
 
-/* Callback route for OAuth2 authentication */
+/* Get route to /auth/google/callback, callback route for OAuth2 authentication */
 router.get(
   "/google/callback",
   passport.authenticate("google", { failureRedirect: "/login" }),
   function (req, res) {
     // Successful authentication
-    console.log(req.user);
     req.session.save(() => {
       req.session.signedIn = true;
       req.session.username = true;
