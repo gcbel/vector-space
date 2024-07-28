@@ -19,8 +19,8 @@ router.get(
     // Successful authentication
     req.session.save(() => {
       req.session.signedIn = true;
-      req.session.username = true;
-      res.redirect("/feed");
+      req.session.username = req.user.dataValues.username;
+      res.redirect(`/dashboard/${req.user.dataValues.username}`);
     });
   }
 );
