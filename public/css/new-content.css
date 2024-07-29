@@ -1,5 +1,6 @@
-/* DASHBOARD */
-#new-post-outer {
+/* "NEW" BUTTONS */
+#new-post-outer,
+#new-comment-outer {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -9,7 +10,8 @@
   margin-top: 10px;
 }
 
-#new-post {
+#new-post,
+#new-comment {
   padding: 16px 20px 16px 20px;
   width: 170px;
   display: flex;
@@ -18,7 +20,9 @@
   z-index: 0;
 }
 
-#new-post-section {
+/* NEW POST/COMMENT SECTION */
+#new-post-section,
+#new-comment-section {
   position: fixed;
   top: 0;
   left: 0;
@@ -29,7 +33,8 @@
   min-width: 300px;
 }
 
-#new-post-section-inner {
+#new-post-section-inner,
+#new-comment-section-inner {
   padding: 16px 20px 16px 20px;
   font-size: 22px;
   margin-top: 20px;
@@ -45,7 +50,8 @@
   margin: 6px 0px 6px 0px;
 }
 
-.post-alert {
+.post-alert,
+.comment-alert {
   font-size: 16px;
   color: var(--modal-hover);
   margin-bottom: 8px;
@@ -55,7 +61,8 @@
   color: var(--modal-hover);
 }
 
-#post-new-post-button {
+#post-new-post-button,
+#post-new-comment-button {
   margin-top: 8px;
   padding: 6px 12px 6px 12px;
   font-size: 22px;
@@ -65,18 +72,14 @@
   background-color: var(--clear);
 }
 
-#post-new-post-button:hover {
+#post-new-post-button:hover,
+#post-new-comment-button:hover {
   color: var(--modal-hover);
   border: 1px solid var(--modal-hover);
 }
 
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#new-post-section input {
+#new-post-section input,
+#new-comment-section input {
   border: 1px solid var(--background);
   border-radius: 15px;
   color: var(--background-clear);

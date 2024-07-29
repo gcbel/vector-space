@@ -30,3 +30,31 @@
     {{/each}}
   </section>
 </div>
+
+<div id="new-comment-outer">
+  <section class="hanken full-border" id="new-comment">
+    <p id="plus"><i class="fa-solid fa-plus"></i> New comment</p>
+  </section>
+</div>
+
+<div class="hidden hanken" id="new-comment-section">
+  <section
+    class="modal-look posts fade-in-quick"
+    id="new-comment-section-inner"
+  >
+    <div id="title-and-x">
+      <p>New comment:</p>
+      <i class="fa-solid fa-x" id="x-out"></i>
+    </div>
+    <p class="hidden comment-alert" id="comment-content-alert">Please enter
+      content for your comment</p>
+    <input type="text" id="comment-content" name="comment-content" />
+    <p class="hidden comment-alert" id="comment-alert">Sorry, we weren't able to
+      create that comment. Try again later!
+    </p>
+    <button id="post-new-comment-button">Comment</button>
+  </section>
+</div>
+
+{{! JAVASCRIPT }}
+<script src="/js/new-comment.js"></script>
