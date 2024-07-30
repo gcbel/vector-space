@@ -14,7 +14,7 @@
 
   <section class="comments">
     {{#each post.vector_space_db_comments as |comment|}}
-      <div class="comment light-background">
+      <div class="comment light-background" data-id="{{comment.id}}">
         <div class="comment-header">
           <h4>Posted by
             <span
@@ -25,17 +25,22 @@
         </div>
         <div class="comment-body">
           <p class="comment-text">{{comment.content}}</p>
+          {{#ifvalue comment.vector_space_db_user.username value=username}}
+            <i class="fa-regular fa-trash-can" id="delete-comment"></i>
+          {{/ifvalue}}
         </div>
       </div>
     {{/each}}
   </section>
 </div>
 
-<div id="new-comment-outer">
-  <section class="hanken full-border" id="new-comment">
-    <p id="plus"><i class="fa-solid fa-plus"></i> New comment</p>
-  </section>
-</div>
+{{#if signedIn}}
+  <div id="new-comment-outer">
+    <section class="hanken full-border" id="new-comment">
+      <p id="plus"><i class="fa-solid fa-plus"></i> Add comment</p>
+    </section>
+  </div>
+{{/if}}
 
 <div class="hidden hanken" id="new-comment-section">
   <section
