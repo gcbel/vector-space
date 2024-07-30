@@ -3,12 +3,19 @@
     <div class="post-header">
       <h3>{{post.title}}</h3>
       <h4>Posted by
-        <span id="post-username">{{post.vector_space_db_user.username}}</span>
+        <span
+          id="post-username"
+          data-username="{{post.vector_space_db_user.username}}"
+        >{{post.vector_space_db_user.username}}</span>
         on
         {{getDate post.date}}</h4>
     </div>
     <div class="post-body">
       <p>{{post.content}}</p>
+      {{#ifvalue post.vector_space_db_user.username value=username}}
+        <i class="fa-regular fa-pen-to-square"></i>
+        <i class="fa-regular fa-trash-can" id="delete-post"></i>
+      {{/ifvalue}}
     </div>
   </div>
 
@@ -62,4 +69,4 @@
 </div>
 
 {{! JAVASCRIPT }}
-<script src="/js/new-comment.js"></script>
+<script src="/js/post-page.js"></script>

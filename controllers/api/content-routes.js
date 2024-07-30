@@ -30,6 +30,34 @@ router.post("/post", async (req, res) => {
   }
 });
 
+/* Delete route to /api/content/pst/:id, deletes a post */
+router.delete("/post/:id", async (req, res) => {
+  try {
+    const post = await Post.findOne({ where: { id: req.params.id } });
+    if (!post) {
+      return res.status(404).json({ message: "No such post." });
+    }
+
+    // Ensure user created this post
+    const user = await User.findOne({
+      where: { username: req.session.username },
+    });
+    if (!user || user.id !== post.user_id) {
+      return res.status(403).json({ message: "Unauthorized." });
+    }
+
+    // Destroy associated comments, then destroy post
+    await Comment.destroy({
+      where: { post_id: post.id },
+    });
+    await post.destroy();
+    res.status(200).json({ message: "Post deleted successfully." });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Failed to delete the post.", error: err });
+  }
+});
+
 /* Post route to /api/content/comment, creates a new comment */
 router.post("/comment", async (req, res) => {
   try {

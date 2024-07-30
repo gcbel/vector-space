@@ -5,6 +5,8 @@ const newCommentSection = document.querySelector("#new-comment-section");
 const commentNewComment = document.querySelector("#post-new-comment-button");
 const commentContentAlert = document.querySelector("#comment-content-alert");
 const commentAlert = document.querySelector("#comment-alert");
+const deletePostBtn = document.querySelector("#delete-post");
+const username = document.querySelector("#post-username").dataset.username;
 
 /* FUNCTIONS */
 /* Show/hide new comment prompts */
@@ -43,6 +45,33 @@ async function submitNewComment() {
   }
 }
 
+/* Delete post */
+async function deletePost(event) {
+  // Get value of post id via regex
+  const url = window.location.href;
+  const regex = /post\/(\d+)/;
+  const postId = url.match(regex)[1];
+
+  // Delete post
+  try {
+    const response = await fetch(`/api/content/post/${postId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    // Reload page or send failure message
+    if (response.ok) {
+      document.location.replace(`/dashboard/${username}`);
+    } else {
+      console.error("Failed to delete comment.");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
 /* Delete comment */
 async function deleteComment(event) {
   // Get comment and comment id
@@ -73,6 +102,7 @@ async function deleteComment(event) {
 newCommentButton.addEventListener("click", toggleNewCommentSection);
 xCommentButton.addEventListener("click", toggleNewCommentSection);
 commentNewComment.addEventListener("click", submitNewComment);
+deletePostBtn.addEventListener("click", deletePost);
 document.querySelectorAll("#delete-comment").forEach((button) => {
   button.addEventListener("click", deleteComment);
 });
