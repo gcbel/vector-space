@@ -35,9 +35,17 @@
             {{getDate comment.date}}</h4>
         </div>
         <div class="comment-body">
-          <p class="comment-text">{{comment.content}}</p>
           {{#ifvalue comment.vector_space_db_user.username value=username}}
+            <p
+              class="comment-text"
+              style="max-width: 95%"
+            >{{comment.content}}</p>
             <i class="fa-regular fa-trash-can" id="delete-comment"></i>
+          {{else}}
+            <p
+              class="comment-text"
+              style="max-width: 100%"
+            >{{comment.content}}</p>
           {{/ifvalue}}
         </div>
       </div>

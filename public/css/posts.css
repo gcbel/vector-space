@@ -30,11 +30,13 @@
   font-size: 24px;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  margin: 0px 6px 0px 0px;
 }
 
 .post h4,
 .post-page h4 {
-  color: var(--hover);
+  margin-top: 5px;
+  color: var(--modal-hover);
   font-size: 18px;
 }
 
@@ -55,7 +57,7 @@
 }
 
 .post-body i {
-  margin: 3px 0px 3px 3px;
+  margin: 3px 0px 3px 6px;
 }
 
 .post-header {
@@ -73,7 +75,7 @@
 }
 
 #post-username {
-  color: var(--accent-text);
+  color: var(--text-color);
 }
 
 .post-comment-number {
@@ -101,13 +103,19 @@
   justify-content: flex-end;
 }
 
+.comment-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 .comment h3 {
   color: var(--accent-text);
   font-size: 24px;
 }
 
 .comment h4 {
-  color: var(--hover);
+  color: var(--modal-hover);
   font-size: 18px;
 }
 
@@ -116,6 +124,10 @@
   font-size: 20px;
   font-weight: 300;
   margin-top: 8px;
+}
+
+.comment i {
+  margin: 0px 0px 0px 8px;
 }
 
 /* MOBILE */
