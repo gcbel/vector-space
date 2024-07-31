@@ -13,8 +13,10 @@
     <div class="post-body">
       <p>{{post.content}}</p>
       {{#ifvalue post.vector_space_db_user.username value=username}}
-        <i class="fa-regular fa-pen-to-square" id="edit-post"></i>
-        <i class="fa-regular fa-trash-can" id="delete-post"></i>
+        <div class="post-body-icons">
+          <i class="fa-regular fa-pen-to-square" id="edit-post"></i>
+          <i class="fa-regular fa-trash-can" id="delete-post"></i>
+        </div>
       {{/ifvalue}}
     </div>
   </div>

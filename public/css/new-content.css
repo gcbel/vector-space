@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+  min-width: 300px;
 }
 
 #new-post-outer {
