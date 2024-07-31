@@ -67,7 +67,10 @@ footer a:hover,
 #sign-in-menu:hover,
 #sign-up-menu:hover,
 #sign-up-button:hover,
-#sign-in-button:hover {
+#sign-in-button:hover,
+#delete-comment:hover,
+#edit-post:hover,
+#delete-post:hover {
   color: var(--hover);
 }
 
