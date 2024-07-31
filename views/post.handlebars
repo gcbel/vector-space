@@ -1,8 +1,8 @@
 <div class="posts hanken">
   <div class="post-page">
     <div class="post-header">
-      <h3>{{post.title}}</h3>
-      <h4>Posted by
+      <h3 style="max-width: 100%">{{post.title}}</h3>
+      <h4 style="max-width: 100%">Posted by
         <span
           id="post-username"
           data-username="{{post.vector_space_db_user.username}}"
@@ -11,12 +11,14 @@
         {{getDate post.date}}</h4>
     </div>
     <div class="post-body">
-      <p>{{post.content}}</p>
       {{#ifvalue post.vector_space_db_user.username value=username}}
+        <p style="max-width: 90%">{{post.content}}</p>
         <div class="post-body-icons">
           <i class="fa-regular fa-pen-to-square" id="edit-post"></i>
           <i class="fa-regular fa-trash-can" id="delete-post"></i>
         </div>
+      {{else}}
+        <p style="max-width: 100%">{{post.content}}</p>
       {{/ifvalue}}
     </div>
   </div>

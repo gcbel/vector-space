@@ -1,14 +1,14 @@
 <a href="/post/{{id}}">
   <div class="post borders">
     <div class="post-header">
-      <h3>{{post.title}}</h3>
-      <h4>Posted by
+      <h3 style="max-width: 100%">{{post.title}}</h3>
+      <h4 style="max-width: 100%">Posted by
         <span id="post-username">{{post.vector_space_db_user.username}}</span>
         on
         {{getDate post.date}}</h4>
     </div>
     <div class="post-body">
-      <p>{{post.content}}</p>
+      <p style="max-width: 100%">{{post.content}}</p>
     </div>
     <div class="post-comment-number light-background">
       {{#ifvalue post.vector_space_db_comments.length value=1}}
