@@ -7,7 +7,7 @@ nav {
   padding: 40px 16px 6px 24px;
   align-items: center;
   height: 60px;
-  z-index: 1.2;
+  z-index: 2;
   font-size: calc(0.5vw + 20px);
   min-width: 300px;
 }
