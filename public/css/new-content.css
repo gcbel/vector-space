@@ -36,7 +36,8 @@
 
 /* NEW POST/COMMENT SECTION */
 #new-post-section,
-#new-comment-section {
+#new-comment-section,
+#edit-post-section {
   position: fixed;
   top: 0;
   left: 0;
@@ -48,7 +49,8 @@
 }
 
 #new-post-section-inner,
-#new-comment-section-inner {
+#new-comment-section-inner,
+#edit-post-section-inner {
   padding: 16px 20px 16px 20px;
   font-size: 22px;
   margin-top: 20px;
@@ -76,7 +78,8 @@
 }
 
 #post-new-post-button,
-#post-new-comment-button {
+#post-new-comment-button,
+#post-edited-post-button {
   margin-top: 8px;
   padding: 6px 12px 6px 12px;
   font-size: 22px;
@@ -87,13 +90,15 @@
 }
 
 #post-new-post-button:hover,
-#post-new-comment-button:hover {
+#post-new-comment-button:hover,
+#post-edited-post-button:hover {
   color: var(--modal-hover);
   border: 1px solid var(--modal-hover);
 }
 
 #new-post-section input,
-#new-comment-section input {
+#new-comment-section input,
+#edit-post-section input {
   border: 1px solid var(--background);
   border-radius: 15px;
   color: var(--background-clear);

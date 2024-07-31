@@ -30,6 +30,31 @@ router.post("/post", async (req, res) => {
   }
 });
 
+/* Put route to /api/content/post/id, updates a post */
+router.put("/post/:id", async (req, res) => {
+  try {
+    const post = await Post.findOne({ where: { id: req.params.id } });
+    if (!post) {
+      return res.status(400).json({ message: "No such post." });
+    }
+
+    // Update a post
+    const updatedPost = await Post.update(
+      {
+        title: req.body.title,
+        content: req.body.content,
+        date: new Date(),
+      },
+      { where: { id: req.params.id } }
+    );
+
+    res.status(200).json(updatedPost);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Failed to update post.", error: err });
+  }
+});
+
 /* Delete route to /api/content/pst/:id, deletes a post */
 router.delete("/post/:id", async (req, res) => {
   try {

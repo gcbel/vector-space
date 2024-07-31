@@ -13,7 +13,7 @@
     <div class="post-body">
       <p>{{post.content}}</p>
       {{#ifvalue post.vector_space_db_user.username value=username}}
-        <i class="fa-regular fa-pen-to-square"></i>
+        <i class="fa-regular fa-pen-to-square" id="edit-post"></i>
         <i class="fa-regular fa-trash-can" id="delete-post"></i>
       {{/ifvalue}}
     </div>
@@ -56,7 +56,7 @@
   >
     <div id="title-and-x">
       <p>New comment:</p>
-      <i class="fa-solid fa-x" id="x-out"></i>
+      <i class="fa-solid fa-x" id="comment-x-out"></i>
     </div>
     <p class="hidden comment-alert" id="comment-content-alert">Please enter
       content for your comment</p>
@@ -65,6 +65,26 @@
       create that comment. Try again later!
     </p>
     <button id="post-new-comment-button">Comment</button>
+  </section>
+</div>
+
+<div class="hidden hanken" id="edit-post-section">
+  <section class="modal-look posts fade-in-quick" id="edit-post-section-inner">
+    <div id="title-and-x">
+      <p>Title:</p>
+      <i class="fa-solid fa-x" id="edit-x-out"></i>
+    </div>
+    <p class="hidden post-alert" id="post-title-alert">Please enter a title for
+      your post</p>
+    <input type="text" id="edit-post-title" name="edit-post-title" />
+    <p id="new-post-content">Content:</p>
+    <p class="hidden post-alert" id="post-content-alert">Please enter content
+      for your post</p>
+    <input type="text" id="edit-post-content" name="edit-post-content" />
+    <p class="hidden post-alert" id="post-alert">Sorry, we weren't able to
+      update your post. Try again later!
+    </p>
+    <button id="post-edited-post-button">Edit</button>
   </section>
 </div>
 
