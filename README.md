@@ -4,7 +4,7 @@
 
 Visit this site at https://vector-space.onrender.com.
 
-This project is a social media created for sharing tech concepts. This project is created using Handlebars.js, Express.js and Sequelize.
+This project is a social media created for sharing tech concepts. Users can share posts, engage with each other through comments, view all of their previous posted content, and edit and delete their posts. This project is created using Handlebars.js, Express.js and Sequelize.
 
 ## Installation
 
