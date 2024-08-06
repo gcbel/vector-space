@@ -10,7 +10,9 @@ N/A
 
 ## Usage
 
-Visit this site at https://vector-space.onrender.com. Please allow about a minute for the site to load, as periods of site inactivity cause slow connections to the website.
+Visit this site at https://vector-space.onrender.com. 
+
+Please allow about a minute for the site to load, as periods of site inactivity cause slow connections to the website.
 
 ## Credits
 
