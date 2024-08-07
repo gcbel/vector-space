@@ -5,8 +5,6 @@ const newCommentSection = document.querySelector("#new-comment-section");
 const commentNewComment = document.querySelector("#post-new-comment-button");
 const commentContentAlert = document.querySelector("#comment-content-alert");
 const commentAlert = document.querySelector("#comment-alert");
-const deletePostBtn = document.querySelector("#delete-post");
-const editPostBtn = document.querySelector("#edit-post");
 const editPostSection = document.querySelector("#edit-post-section");
 const xEditButton = document.querySelector("#edit-x-out");
 const postEditedPost = document.querySelector("#post-edited-post-button");
@@ -151,10 +149,14 @@ async function deleteComment(event) {
 newCommentButton.addEventListener("click", toggleNewCommentSection);
 xCommentButton.addEventListener("click", toggleNewCommentSection);
 commentNewComment.addEventListener("click", submitNewComment);
-deletePostBtn.addEventListener("click", deletePost);
-editPostBtn.addEventListener("click", toggleUpdatePostSection);
 xEditButton.addEventListener("click", toggleUpdatePostSection);
 postEditedPost.addEventListener("click", updatePost);
+document.querySelectorAll("#edit-post").forEach((button) => {
+  button.addEventListener("click", toggleUpdatePostSection);
+});
+document.querySelectorAll("#delete-post").forEach((button) => {
+  button.addEventListener("click", deletePost);
+});
 document.querySelectorAll("#delete-comment").forEach((button) => {
   button.addEventListener("click", deleteComment);
 });
